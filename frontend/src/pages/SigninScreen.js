@@ -61,7 +61,9 @@ const SigninScreen = (props) => {
 					<label />
 					<div>
 						New Customer? {""}
-						<Link to="/register">Create your Account</Link>
+						<Link to={`/register?redirect=${redirect}`}>
+							Create your Account
+						</Link>
 					</div>
 				</div>
 			</form>
