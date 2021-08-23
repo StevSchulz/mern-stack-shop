@@ -11,7 +11,9 @@ const RegisterScreen = (props) => {
 	const [password, setPassword] = useState("");
 	const [conPassword, setConPassword] = useState("");
 
-	const redirect = props.location.search ? props.location.search.split("=")[1] : "/";
+	const redirect = props.location.search
+		? props.location.search.split("=")[1]
+		: "/";
 
 	const userRegister = useSelector((state) => state.userRegister);
 	const { userInfo, loading, error } = userRegister;
@@ -25,7 +27,6 @@ const RegisterScreen = (props) => {
 			dispatch(register(name, email, password));
 		}
 	};
-	console.log(props);
 	useEffect(() => {
 		if (userInfo) {
 			props.history.push(redirect);
@@ -74,7 +75,9 @@ const RegisterScreen = (props) => {
 						type="password"
 						placeholder="Confirm password"
 						id="confirmPassword"
-						onChange={(e) => setConPassword(e.target.value)}></input>
+						onChange={(e) =>
+							setConPassword(e.target.value)
+						}></input>
 				</div>
 				<div>
 					<label />
