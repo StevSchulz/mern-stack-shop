@@ -6,6 +6,7 @@ import {
 	USER_REGISTER_REQUEST,
 	USER_REGISTER_SUCCESS,
 	USER_REGISTER_FAIL,
+	USER_ORDER_CREATED,
 } from "../constants/userConstants";
 
 export const userSigninReducer = (state = {}, action) => {
@@ -14,9 +15,11 @@ export const userSigninReducer = (state = {}, action) => {
 			return { loading: true };
 		case USER_SIGNIN_SUCCESS:
 			return { loading: false, userInfo: action.payload };
-
 		case USER_SIGNIN_FAIL:
 			return { loading: false, error: action.payload };
+
+		case USER_ORDER_CREATED:
+			return { orders: action.payload };
 		case USER_SIGNIN_SIGNOUT:
 			return {};
 		default:
