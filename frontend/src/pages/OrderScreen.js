@@ -71,7 +71,7 @@ const OrderScreen = (props) => {
 												<div className=" col-min">
 													<img
 														alt={item.name}
-														className="small"
+														className="medium"
 														src={item.image}></img>
 												</div>
 											</div>

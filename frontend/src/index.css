@@ -149,9 +149,12 @@ img {
 	border-radius: 0.5rem;
 }
 img.medium {
-	max-width: 29rem;
+	/* max-width: 29rem;
 	width: 100%;
 	min-height: 200px;
+	max-height: 400px; */
+	width: 25vw;
+	height: 40vh;
 }
 
 img.large {
