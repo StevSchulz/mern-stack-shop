@@ -5,6 +5,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import { signout } from "./actions/userActions";
 import CartScreen from "./pages/CartScreen";
 import { HomeScreen } from "./pages/HomeScreen";
+import MyAccountScreen from "./pages/MyAccountScreen";
 import PaymentScreen from "./pages/PaymentScreen";
 import PlaceOrderScreen from "./pages/PlaceOrderScreen";
 import { ProductScreen } from "./pages/ProductScreen";
@@ -21,6 +22,7 @@ function App() {
 	const signoutHandler = () => {
 		dispatch(signout());
 	};
+
 	return (
 		<BrowserRouter>
 			<div className="grid-container">
@@ -45,6 +47,11 @@ function App() {
 								</Link>
 								<ul className="dropdown-content">
 									<li>
+										<Link to={"myAccount/" + userInfo._id}>
+											My Account
+										</Link>
+									</li>
+									<li>
 										<Link to="#signout" onClick={signoutHandler}>
 											Sign Out
 										</Link>
@@ -64,6 +71,7 @@ function App() {
 					<Route path="/shipping" component={ShippingAddressScreen}></Route>
 					<Route path="/payment" component={PaymentScreen}></Route>
 					<Route path="/placeorder" component={PlaceOrderScreen}></Route>
+					<Route path="/myAccount/:id" component={MyAccountScreen}></Route>
 					<Route path="/" component={HomeScreen} exact></Route>
 				</main>
 				<footer className="row center">All rights reserverd</footer>

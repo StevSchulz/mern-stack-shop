@@ -5,6 +5,7 @@ import {
 	ORDER_CREATE_REQUEST,
 	ORDER_CREATE_SUCCESS,
 } from "../constants/orderConstants";
+import { USER_ORDER_CREATED } from "../constants/userConstants";
 
 export const createOrder = (order) => async (dispatch, getState) => {
 	dispatch({ type: ORDER_CREATE_REQUEST, payload: order });
@@ -18,7 +19,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
 				authorization: `Bearer ${userInfo.token}`,
 			},
 		});
-
+		dispatch({ type: USER_ORDER_CREATED, payload: data.order });
 		dispatch({ type: ORDER_CREATE_SUCCESS, payload: data.order });
 		dispatch({ type: CART_EMPTY });
 		localStorage.removeItem("cartItems");
