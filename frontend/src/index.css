@@ -151,7 +151,7 @@ img {
 img.medium {
 	max-width: 29rem;
 	width: 100%;
-	min-height: 400px;
+	min-height: 200px;
 }
 
 img.large {
